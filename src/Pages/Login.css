@@ -85,6 +85,21 @@
 .link-registrate:hover {
   text-decoration: underline;
 }
+.login-actions {
+  display: flex;
+  gap: 10px;
+}
+.login-actions .btn-primary { flex: 1 1 60%; }
+.login-actions .btn-secondary {
+  flex: 1 1 40%;
+  background: #28a745;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.login-actions .btn-secondary:hover { background: #218838; transform: scale(1.02); }
 .login-success {
   color: green;
   font-weight: bold;

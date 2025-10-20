@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <header className={`main-header ${hide ? "hide-header" : ""}`}>
-            <h1>Farmacia</h1>
+            <h1>⚕️Farmacia</h1>
             <p>¡la salud siempre primero!</p>
         </header>
     );

@@ -65,7 +65,7 @@
       "precio": 700,
       "stock": 15,
       "descripcion": "Reduce inflamación y fiebre.",
-      "imagen": "./img/ibuprofeno.jpeg"
+      "imagen": "./img/ibuprofeno.jpg"
     },
     {
       "id": "3",
@@ -74,7 +74,7 @@
       "precio": 600,
       "stock": 25,
       "descripcion": "Analgésico y antiinflamatorio.",
-      "imagen": "./img/aspirina.jpeg"
+      "imagen": "./img/aspirina.jpg"
     },
     {
       "id": "4",
@@ -83,7 +83,7 @@
       "precio": 800,
       "stock": 18,
       "descripcion": "Protector gástrico para acidez.",
-      "imagen": "./img/omeprazol.jpeg"
+      "imagen": "./img/omeprazol.jpg"
     },
     {
       "id": "5",
@@ -92,7 +92,7 @@
       "precio": 450,
       "stock": 30,
       "descripcion": "Antihistamínico para alergias.",
-      "imagen": "./img/loratadina.jpeg"
+      "imagen": "./img/loratadina.jpg"
     },
     {
       "id": "6",
@@ -101,7 +101,7 @@
       "precio": 1200,
       "stock": 12,
       "descripcion": "Antibiótico de amplio espectro.",
-      "imagen": "./img/amoxicilina.jpeg"
+      "imagen": "./img/amoxicilina.jpg"
     },
     {
       "id": "7",
@@ -110,16 +110,8 @@
       "precio": 650,
       "stock": 22,
       "descripcion": "Antiinflamatorio no esteroideo.",
-      "imagen": "./img/diclofenac.jpeg"
-    },
-    {
-      "id": "abe3",
-      "nombre": "Paracetamol",
-      "descripcion": "Alivia dolores leves.",
-      "precio": 2,
-      "stock": 222,
-      "imagenUrl": ""
-    }
+      "imagen": "./img/diclofenac.jpg"
+    } 
   ],
   "ventas": [
     {

@@ -62,15 +62,16 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit" disabled={loading || !usuario || !password}>
-                    {loading ? "Cargando..." : "Iniciar Sesión"}
-                </button>
-
+                <div className="login-actions">
+                    <button type="submit" className="btn-primary" disabled={loading || !usuario || !password}>
+                        {loading ? "Cargando..." : "Iniciar Sesión"}
+                    </button>
+                    <button type="button" className="btn-secondary" onClick={() => navigate('/registro')}>
+                        Registrarse
+                    </button>
+                </div>
                 <p className="login-link">
-                    ¿No tienes una cuenta? (" ")
-                    <span onClick={() => navigate("/registro")} className="link-registrate">
-                        Regístrate
-                    </span>
+                    ¿No tienes una cuenta?
                 </p>
             </form>
         </div>
