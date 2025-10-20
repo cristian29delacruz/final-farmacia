@@ -1,0 +1,135 @@
+.home-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.product-card {
+  background: linear-gradient(180deg, #ffffff10, #00000010);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: #f2f2f2;
+}
+
+.product-card .card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+}
+
+.product-card .card-title {
+  font-size: 1.05rem;
+  margin: 0;
+  color: #fff;
+}
+
+.product-card .card-text {
+  color: #dcdcdc;
+  margin-top: auto;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #646cff, #535bf2);
+  border: none;
+  color: white;
+  padding: 0.55rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(83,91,242,0.25);
+}
+
+@media (max-width: 768px) {
+  .product-card img { height: 150px; }
+}
+
+.search-bar {
+  width: 100vw; /* span full viewport width */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+}
+
+.search-input {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.03);
+  color: inherit; /* inherit from page so it works in light/dark */
+  caret-color: inherit;
+  font-size: 1rem;
+}
+
+.search-input::placeholder { color: #cfcfcf; }
+
+.search-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.search-input { padding-left: 40px; }
+
+.search-select {
+  margin-left: 12px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+}
+
+@media (prefers-color-scheme: light) {
+  .search-input {
+    background: rgba(0,0,0,0.03);
+    border-color: rgba(0,0,0,0.08);
+    color: #213547;
+    caret-color: #213547;
+  }
+  .search-icon { color: #8b8b8b; }
+}
+@media (prefers-color-scheme: dark) {
+  .search-icon { color: #cfcfcf; }
+}

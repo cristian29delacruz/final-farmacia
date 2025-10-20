@@ -1,0 +1,121 @@
+.tabla-clientes {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    color: #fff;
+    font-family: "Bebas Neue", Arial, sans-serif;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+.tabla-clientes th, .tabla-clientes td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid #4b78b4;
+    font-size: 1.1em;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.tabla-clientes th {
+    background: #1f2022;
+    color : #fff;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #444;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.tabla-clientes tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-clientes button {
+    margin-right: 8px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s opacity 0.2s;
+    box-shadow: 0 2px 8px  rgba(0, 0, 0, 0.10);
+}
+
+.tabla-clientes button:last-child {
+    background: #dc3545;
+}
+
+.tabla-clientes button:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px #007bff88;
+    background: #0056b3;
+}
+
+.tabla-clientes button:last-child:hover {
+    background: #a71d2a;
+}
+
+.tabla-clientes tbody tr {
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.tabla-clientes tbody tr:hover {
+    background: rgba(0,230,208,0.10);
+    box-shadow: 0 2px 12px #00e6d044;
+}
+
+.tabla-clientes thead tr {
+    animation: fadeInDown 0.7s;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Encabezados */
+.admin-clientes-title {
+    color: #00e6d0;
+    font-family: "Bebas Neue", Arial, sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 24px;
+    margin-top: 0;
+    text-shadow: 2px 2px 8px #0008;
+    animation: slideDownTitle 1s cubic-bezier(.68,-0.55, .27,1.55);
+}
+
+@keyframes slideDownTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin-clientes-bg {
+    background: #111;
+    min-height: 100vh;
+    padding: 40px 0 0 0;
+    
+}
+

@@ -1,0 +1,224 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "admin",
+      "usuario": "admin",
+      "email": "admin@farmacia.com",
+      "password": "1234",
+      "rol": "admin"
+    },
+    {
+      "id": "2",
+      "nombre": "empleado",
+      "usuario": "empleado",
+      "email": "empleado@farmacia.com",
+      "password": "abcd",
+      "rol": "empleado"
+    },
+    {
+      "id": "3",
+      "nombre": "Juan Pérez",
+      "usuario": "cliente1",
+      "email": "juan@email.com",
+      "password": "1234",
+      "rol": "cliente"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Juan Pérez",
+      "email": "juan@email.com",
+      "telefono": "123456789",
+      "direccion": "Calle 123"
+    },
+    {
+      "id": "2",
+      "nombre": "María García",
+      "email": "maria@email.com",
+      "telefono": "987654321",
+      "direccion": "Avenida 456"
+    },
+    {
+      "id": "3",
+      "nombre": "Carlos López",
+      "email": "carlos@email.com",
+      "telefono": "456789123",
+      "direccion": "Plaza 789"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Paracetamol",
+      "categoria": "Analgesico",
+      "precio": 502,
+      "stock": 19,
+      "descripcion": "Alivia dolores leves.",
+      "imagen": "./img/paracetamol.jpg"
+    },
+    {
+      "id": "2",
+      "nombre": "Ibuprofeno",
+      "categoria": "Anti-inflamatorio",
+      "precio": 700,
+      "stock": 15,
+      "descripcion": "Reduce inflamación y fiebre.",
+      "imagen": "./img/ibuprofeno.jpeg"
+    },
+    {
+      "id": "3",
+      "nombre": "Aspirina",
+      "categoria": "Analgesico",
+      "precio": 600,
+      "stock": 25,
+      "descripcion": "Analgésico y antiinflamatorio.",
+      "imagen": "./img/aspirina.jpeg"
+    },
+    {
+      "id": "4",
+      "nombre": "Omeprazol",
+      "categoria": "Gastroprotector",
+      "precio": 800,
+      "stock": 18,
+      "descripcion": "Protector gástrico para acidez.",
+      "imagen": "./img/omeprazol.jpeg"
+    },
+    {
+      "id": "5",
+      "nombre": "Loratadina",
+      "categoria": "Antihistaminico",
+      "precio": 450,
+      "stock": 30,
+      "descripcion": "Antihistamínico para alergias.",
+      "imagen": "./img/loratadina.jpeg"
+    },
+    {
+      "id": "6",
+      "nombre": "Amoxicilina",
+      "categoria": "Antibiotico",
+      "precio": 1200,
+      "stock": 12,
+      "descripcion": "Antibiótico de amplio espectro.",
+      "imagen": "./img/amoxicilina.jpeg"
+    },
+    {
+      "id": "7",
+      "nombre": "Diclofenac",
+      "categoria": "Anti-inflamatorio",
+      "precio": 650,
+      "stock": 22,
+      "descripcion": "Antiinflamatorio no esteroideo.",
+      "imagen": "./img/diclofenac.jpeg"
+    },
+    {
+      "id": "abe3",
+      "nombre": "Paracetamol",
+      "descripcion": "Alivia dolores leves.",
+      "precio": 2,
+      "stock": 222,
+      "imagenUrl": ""
+    }
+  ],
+  "ventas": [
+    {
+      "id": "1",
+      "productoId": 1,
+      "clienteId": 1,
+      "cantidad": 1,
+      "fecha": "2025-07-05",
+      "estado": "entregado",
+      "total": 500
+    },
+    {
+      "id": "2",
+      "productoId": 2,
+      "clienteId": 2,
+      "cantidad": 2,
+      "fecha": "2025-07-10",
+      "estado": "entregado",
+      "total": 1400
+    },
+    {
+      "id": "3",
+      "productoId": 3,
+      "clienteId": 3,
+      "cantidad": 1,
+      "fecha": "2025-07-12",
+      "estado": "pendiente",
+      "total": 600
+    },
+    {
+      "id": "4",
+      "productoId": 4,
+      "clienteId": 1,
+      "cantidad": 3,
+      "fecha": "2025-07-14",
+      "estado": "entregado",
+      "total": 2400
+    },
+    {
+      "id": "5",
+      "productoId": 5,
+      "clienteId": 2,
+      "cantidad": 1,
+      "fecha": "2025-07-15",
+      "estado": "pendiente",
+      "total": 450
+    },
+    {
+      "id": "6",
+      "productoId": 6,
+      "clienteId": 3,
+      "cantidad": 2,
+      "fecha": "2025-07-16",
+      "estado": "entregado",
+      "total": 2400
+    },
+    {
+      "id": "f386",
+      "clienteId": 1,
+      "productoId": 4,
+      "cantidad": 1,
+      "fecha": "2025-07-16T18:43:35.443Z",
+      "estado": "pendiente",
+      "total": 800
+    },
+    {
+      "id": "f217",
+      "clienteId": 1,
+      "productoId": 4,
+      "cantidad": 1,
+      "fecha": "2025-07-16T18:43:43.598Z",
+      "estado": "pendiente",
+      "total": 800
+    },
+    {
+      "id": "e94b",
+      "clienteId": 1,
+      "productoId": 1,
+      "cantidad": 1,
+      "fecha": "2025-07-16T18:44:16.124Z",
+      "estado": "pendiente",
+      "total": 500
+    },
+    {
+      "id": "7e5d",
+      "clienteId": 1,
+      "productoId": 4,
+      "cantidad": 1,
+      "fecha": "2025-07-16T18:54:31.687Z",
+      "estado": "pendiente",
+      "total": 800
+    },
+    {
+      "id": "96b3",
+      "id_producto": "1",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 502,
+      "fecha": "2025-10-18T02:25:33.609Z"
+    }
+  ]
+}
