@@ -22,7 +22,7 @@ const TablaProductos = ({ productos, onEditar, onEliminar }) => {
                         <td>{producto.stock}</td>
                         <td>
                             <img
-                                src={producto.imagenUrl}
+                                src={producto.imagen || producto.imagenUrl}
                                 alt={producto.nombre}
                                 style={{ width: '50px', height: '50px', objectFit: 'cover', marginRight: '10px' }}
                             />

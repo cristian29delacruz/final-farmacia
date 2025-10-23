@@ -6,19 +6,22 @@ const FormProducto = ({ onGuardar, productoSeleccionado, onCancelar }) => {
     descripcion: "",
     precio: 0,
     stock: 0,
-    imagenUrl: "",
+    imagen: "",
   });
 
     useEffect(() => {
     if (productoSeleccionado) {
-      setProducto(productoSeleccionado);
+      setProducto({
+        ...productoSeleccionado,
+        imagen: productoSeleccionado.imagen || productoSeleccionado.imagenUrl || ""
+      });
     } else {
       setProducto({
         nombre: "",
         descripcion: "",
         precio: 0,
         stock: 0,
-        imagenUrl: "",
+        imagen: "",
       });
     }
     }, [productoSeleccionado]);
@@ -32,13 +35,21 @@ const FormProducto = ({ onGuardar, productoSeleccionado, onCancelar }) => {
     };
     const handleSubmit = (e) => {
     e.preventDefault();
-   onGuardar(producto);
+    // Crear una copia del producto y asegurarse de que use 'imagen' en lugar de 'imagenUrl'
+    const productoAGuardar = {
+        ...producto,
+        imagen: producto.imagen || producto.imagenUrl || ""
+    };
+    // Eliminar imagenUrl si existe para mantener consistencia
+    delete productoAGuardar.imagenUrl;
+    
+    onGuardar(productoAGuardar);
     setProducto({
         nombre: "",
         descripcion: "",
         precio: 0,
         stock: 0,
-        imagenUrl: "",
+        imagen: "",
     });
     };
 
@@ -82,13 +93,15 @@ const FormProducto = ({ onGuardar, productoSeleccionado, onCancelar }) => {
         />
         <input
             type="text"
-            name="imagenUrl"
-            value={producto.imagenUrl}
+            name="imagen"
+            value={producto.imagen}
             onChange={handleChange}
             placeholder="URL de la imagen"
         />
-        <button type="submit">Guardar</button>
-        {onCancelar && <button type="button" onClick={onCancelar}>Cancelar</button>}
+        <div className="form-buttons">
+            <button type="submit">Guardar</button>
+            {onCancelar && <button type="button" onClick={onCancelar}>Cancelar</button>}
+        </div>
     </form>
     );
 }

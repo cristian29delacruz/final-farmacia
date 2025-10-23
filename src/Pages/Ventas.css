@@ -1,0 +1,381 @@
+/* Ventas.css - Estilos para la página de gestión de ventas */
+
+.ventas-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  padding: 2rem;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  color: #f1f1f1;
+}
+
+.ventas-container h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Formularios */
+.ventas-form {
+  background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ventas-form h3 {
+  color: #1a9bff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+}
+
+.ventas-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ventas-form input,
+.ventas-form select,
+.ventas-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(30, 31, 33, 0.8);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.ventas-form input:focus,
+.ventas-form select:focus,
+.ventas-form textarea:focus {
+  outline: none;
+  border-color: #1a9bff;
+  background: rgba(30, 31, 33, 0.9);
+  box-shadow: 0 0 0 3px rgba(26, 155, 255, 0.1);
+}
+
+.ventas-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.ventas-form input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+}
+
+.ventas-form button {
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  min-width: 120px;
+  font-family: inherit;
+}
+
+.ventas-form button[type="submit"] {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+}
+
+.ventas-form button[type="submit"]:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.ventas-form button[type="button"] {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: #fff;
+}
+
+.ventas-form button[type="button"]:hover {
+  background: linear-gradient(135deg, #5a6268, #454d55);
+  transform: translateY(-2px);
+}
+
+/* Tabla de ventas */
+.ventas-table-container {
+  background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow-x: auto;
+}
+
+.ventas-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.ventas-table th,
+.ventas-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 1rem;
+}
+
+.ventas-table th {
+  background: rgba(30, 31, 33, 0.8);
+  color: #1a9bff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.1em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.ventas-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.ventas-table tbody tr:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.ventas-table button {
+  padding: 0.6rem 1rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  min-width: 70px;
+  font-family: inherit;
+}
+
+.ventas-table button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.ventas-table button:first-of-type {
+  background: linear-gradient(135deg, #ffc107, #d39e00);
+  color: #000;
+}
+
+.ventas-table button:first-of-type:hover {
+  background: linear-gradient(135deg, #d39e00, #b8860b);
+}
+
+.ventas-table button:last-of-type {
+  background: linear-gradient(135deg, #dc3545, #a71d2a);
+  color: #fff;
+}
+
+.ventas-table button:last-of-type:hover {
+  background: linear-gradient(135deg, #a71d2a, #7a1319);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .ventas-container {
+    padding: 1rem;
+  }
+  
+  .ventas-container h2 {
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .ventas-form {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .ventas-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+  }
+  
+  .ventas-form input,
+  .ventas-form select,
+  .ventas-form textarea {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .ventas-form button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    min-width: auto;
+  }
+  
+  .ventas-table-container {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .ventas-table th,
+  .ventas-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .ventas-table th {
+    font-size: 1rem;
+  }
+  
+  .ventas-table button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    margin: 0.1rem;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 580px) {
+  .ventas-container {
+    padding: 0.5rem;
+  }
+  
+  .ventas-container h2 {
+    font-size: 1.8em;
+  }
+  
+  .ventas-form {
+    padding: 1rem;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .ventas-table-container {
+    padding: 0.5rem;
+  }
+  
+  /* Convertir tabla a cards en móviles */
+  .ventas-table, 
+  .ventas-table thead, 
+  .ventas-table tbody, 
+  .ventas-table th, 
+  .ventas-table td, 
+  .ventas-table tr {
+    display: block;
+  }
+  
+  .ventas-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .ventas-table tbody tr {
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+  }
+  
+  .ventas-table td {
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    padding: 0.8rem 0 0.8rem 100px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .ventas-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 90px;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #1a9bff;
+    font-size: 0.85rem;
+  }
+  
+  .ventas-table td:last-child {
+    border-bottom: none;
+    padding-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .ventas-table td:last-child:before {
+    display: none;
+  }
+  
+  .ventas-table button {
+    flex: 1;
+    min-width: 80px;
+    margin: 0.2rem;
+  }
+}
+
+/* Labels para móviles usando nth-child */
+@media (max-width: 580px) {
+  .ventas-table td:nth-child(1):before { content: "Cliente:"; }
+  .ventas-table td:nth-child(2):before { content: "Producto:"; }
+  .ventas-table td:nth-child(3):before { content: "Cantidad:"; }
+  .ventas-table td:nth-child(4):before { content: "Fecha:"; }
+  .ventas-table td:nth-child(5):before { content: "Total:"; }
+}
+
+@media (max-width: 400px) {
+  .ventas-form {
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.8rem;
+  }
+  
+  .ventas-table tbody tr {
+    padding: 0.8rem;
+  }
+  
+  .ventas-table td {
+    padding: 0.6rem 0 0.6rem 80px;
+    font-size: 0.85rem;
+  }
+  
+  .ventas-table td:before {
+    width: 70px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Estilos adicionales para elementos específicos */
+.ventas-no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.ventas-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

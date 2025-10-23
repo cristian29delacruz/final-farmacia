@@ -4,6 +4,7 @@ import { getClientes } from "../Services/Clientes";
 import { getProductos } from "../Services/Productos";
 import TablaVentas from "../components/TablaVentas";
 import FormVentas from "../components/FormVentas";
+import "./Ventas.css";
 
 
 const Ventas = () => {
@@ -46,31 +47,27 @@ const Ventas = () => {
   };
 
   return (
-    <div className="admin-container">
-      <div className="admin-header">
-        <h2 className="admin-title">Gestión de Ventas</h2>
+    <div className="ventas-container">
+      <h2>Gestión de Ventas</h2>
+      
+      <div className="ventas-form">
+        <FormVentas
+          onGuardar={editando ? handleActualizar : handleAgregar}
+          ventaSeleccionada={editando}
+          onCancelar={() => setEditando(null)}
+          clientes={clientes}
+          productos={medicamentos}
+        />
       </div>
       
-      <div className="admin-content">
-        <div className="form-section">
-          <FormVentas
-            onGuardar={editando ? handleActualizar : handleAgregar}
-            ventaSeleccionada={editando}
-            onCancelar={() => setEditando(null)}
-            clientes={clientes}
-            productos={medicamentos}
-          />
-        </div>
-        
-        <div className="table-section">
-          <TablaVentas
-            ventas={ventas}
-            clientes={clientes}
-            productos={medicamentos}
-            onEditar={handleEditar}
-            onEliminar={handleEliminar}
-          />
-        </div>
+      <div className="ventas-table-container">
+        <TablaVentas
+          ventas={ventas}
+          clientes={clientes}
+          productos={medicamentos}
+          onEditar={handleEditar}
+          onEliminar={handleEliminar}
+        />
       </div>
     </div>
   );

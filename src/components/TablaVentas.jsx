@@ -37,7 +37,7 @@ const TablaVentas = ({ ventas, clientes, productos, onEditar, onEliminar }) => {
     };
 
     return (
-        <table className="tabla-ventas">
+        <table className="ventas-table">
             <thead>
                 <tr>
                     <th>Cliente</th>
@@ -51,16 +51,16 @@ const TablaVentas = ({ ventas, clientes, productos, onEditar, onEliminar }) => {
             <tbody>
                 {ventas.length === 0 ? (
                     <tr>
-                        <td colSpan="6">No hay ventas registradas.</td>
+                        <td colSpan="6" className="ventas-no-data">No hay ventas registradas.</td>
                     </tr>
                 ) : (
                     ventas.map((venta) => (
                         <tr key={venta.id}>
-                            <td>{getClienteNombre(venta.clienteId, venta)}</td>
-                            <td>{getProductoNombre(venta.productoId, venta)}</td>
-                            <td>{venta.cantidad}</td>
-                            <td>{new Date(venta.fecha).toLocaleDateString()}</td>
-                            <td>
+                            <td data-label="Cliente">{getClienteNombre(venta.clienteId, venta)}</td>
+                            <td data-label="Producto">{getProductoNombre(venta.productoId, venta)}</td>
+                            <td data-label="Cantidad">{venta.cantidad}</td>
+                            <td data-label="Fecha">{new Date(venta.fecha).toLocaleDateString()}</td>
+                            <td data-label="Total">
                                 ${
 
                                     (venta.total !== undefined && venta.total !== null)
@@ -72,7 +72,7 @@ const TablaVentas = ({ ventas, clientes, productos, onEditar, onEliminar }) => {
                                         })()
                                 }
                             </td>
-                            <td>
+                            <td className="ventas-actions">
                                 <button onClick={() => onEditar(venta)}>Editar</button>
                                 <button onClick={() => onEliminar(venta.id)}>Eliminar</button>
                             </td>

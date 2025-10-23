@@ -5,6 +5,7 @@ import { getProductos } from "../Services/Productos";
 import { getClientes, addCliente, editCliente, deleteCliente } from "../Services/Clientes";
 import TablaClientes from "../components/TablaClientes";
 import FormCliente from "../components/FormCliente";
+import "./Clientes.css";
 
 const Clientes = () => {
   const [clientes, setClientes] = useState([]);
@@ -82,7 +83,7 @@ const Clientes = () => {
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
               <HistorialVentas
                 ventas={ventas.filter(v => String(v.clienteId) === String(clienteHistorial.id))}
-                medicamentos={medicamentos}
+                productos={medicamentos}
                 onCerrar={handleCerrarHistorial}
               />
             </div>

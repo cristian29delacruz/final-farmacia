@@ -46,62 +46,71 @@ const FormVentas = ({ onGuardar, ventaSeleccionada, onCancelar,clientes, product
     };
 
     return (
-    <form onSubmit={handleSubmit}>
+    <>
         <h3>{ventaSeleccionada ? "Editar Venta" : "Nueva Venta"}</h3>
-        <select 
-          name="clienteId" 
-          value={venta.clienteId} 
-          onChange={handleChange} required  
-          >
-            <option value="">Seleccione un cliente</option>
-            {clientes.map((cliente) => (
-              <option key={cliente.id} value={cliente.id}>
-                {cliente.nombre}
-              </option>
-            ))}
-          </select>
-
-        <select 
-          name="productoId" 
-          value={venta.productoId}  
-            onChange={handleChange} 
-            required
+        <form onSubmit={handleSubmit}>
+            <select 
+              name="clienteId" 
+              value={venta.clienteId} 
+              onChange={handleChange} 
+              required  
             >
-            <option value="">Seleccione un producto</option>
-            {productos.map((producto) => (
-              <option key={producto.id} value={producto.id}> 
-                {producto.nombre} - ${producto.precio}
-              </option>
-            ))}
-          </select>
+                <option value="">Seleccione un cliente</option>
+                {clientes.map((cliente) => (
+                  <option key={cliente.id} value={cliente.id}>
+                    {cliente.nombre}
+                  </option>
+                ))}
+            </select>
 
-        <input
-          type="number"
-          name="cantidad"
-            value={venta.cantidad}
-            onChange={handleChange}
-            min="1"
-            required
-        />  
-        <input
-            type="date" 
-            name="fecha"
-            value={venta.fecha}
-            onChange={handleChange}
-            required
-        />
-        <label>
-            Pagado:
+            <select 
+              name="productoId" 
+              value={venta.productoId}  
+              onChange={handleChange} 
+              required
+            >
+                <option value="">Seleccione un producto</option>
+                {productos.map((producto) => (
+                  <option key={producto.id} value={producto.id}> 
+                    {producto.nombre} - ${producto.precio}
+                  </option>
+                ))}
+            </select>
+
             <input
-            type="checkbox"
-            name="pagado"
-            checked={venta.pagado || false}
-            onChange={handleChange}
+              type="number"
+              name="cantidad"
+              value={venta.cantidad}
+              onChange={handleChange}
+              min="1"
+              placeholder="Cantidad"
+              required
+            />  
+            
+            <input
+              type="date" 
+              name="fecha"
+              value={venta.fecha}
+              onChange={handleChange}
+              required
             />
-        </label>
-        <button type="submit">Guardar</button>
-        <button type="button" onClick={onCancelar}>Cancelar</button>
-    </form>
+            
+            <label>
+                <input
+                  type="checkbox"
+                  name="pagado"
+                  checked={venta.pagado || false}
+                  onChange={handleChange}
+                />
+                Pagado
+            </label>
+            
+            <div className="ventas-actions">
+                <button type="submit">Guardar</button>
+                <button type="button" onClick={onCancelar}>Cancelar</button>
+            </div>
+        </form>
+    </>
     );
 }
 export default FormVentas; 
