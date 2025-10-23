@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": "1",
-      "nombre": "admin",
+      "nombre": "admin1",
       "usuario": "admin",
       "email": "admin@farmacia.com",
       "password": "1234",
@@ -22,6 +22,14 @@
       "usuario": "cliente1",
       "email": "juan@email.com",
       "password": "1234",
+      "rol": "cliente"
+    },
+    {
+      "id": "4",
+      "nombre": "pato",
+      "usuario": "cliente2",
+      "password": "12345",
+      "email": "asd@mail.com",
       "rol": "cliente"
     }
   ],
@@ -111,7 +119,7 @@
       "stock": 22,
       "descripcion": "Antiinflamatorio no esteroideo.",
       "imagen": "./img/diclofenac.jpg"
-    } 
+    }
   ],
   "ventas": [
     {

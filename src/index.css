@@ -1,4 +1,27 @@
 :root {
+  /* Variables de breakpoints responsive */
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large: 1280px;
+  
+  /* Variables de espaciado responsive */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Variables de tipografía responsive */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-xxxl: 2rem;
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -28,6 +51,48 @@ body {
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevenir scroll horizontal en móviles */
+}
+
+/* Utilidades responsive */
+.container {
+  width: 100%;
+  max-width: var(--large);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.grid-responsive {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.flex-responsive {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Clases de visibilidad responsive */
+.show-mobile { display: none; }
+.hide-mobile { display: block; }
+
+@media (max-width: 768px) {
+  .show-mobile { display: block; }
+  .hide-mobile { display: none; }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  body {
+    font-size: var(--font-size-sm);
+  }
 }
 
 .main-header {
@@ -43,8 +108,21 @@ body {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: var(--spacing-lg);
   box-sizing: border-box;
+}
+
+/* Responsive para main-content */
+@media (max-width: 768px) {
+  .main-content {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: var(--spacing-sm);
+  }
 }
 
 .main-footer {
@@ -55,7 +133,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2rem, 5vw, 3.2rem); /* Responsive font size */
   line-height: 1.1;
 }
 
@@ -69,6 +147,16 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  min-height: 44px; /* Tamaño mínimo para táctil */
+  min-width: 44px;
+}
+
+/* Responsive buttons */
+@media (max-width: 768px) {
+  button {
+    padding: 0.75em 1em;
+    font-size: 0.9em;
+  }
 }
 button:hover {
   border-color: #646cff;

@@ -227,35 +227,126 @@
 }
 
 /* Responsive: adaptar a pantallas pequeñas */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .tabla-ventas .buscador input[type="search"] { width: 120px; }
   .tabla-ventas table { min-width: 640px; }
+  
+  .tabla-ventas {
+    padding: 8px;
+  }
+  
+  .tabla-ventas thead th {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  
+  .tabla-ventas td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .tabla-ventas .btn {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
 }
 
-/* Alternativa: vista "card" en móviles (si el markup la soporta) */
-@media (max-width: 480px) {
+@media (max-width: 580px) {
+  /* Convertir tabla a vista de cards en móviles */
   .tabla-ventas .table-wrapper { overflow: visible; }
   .tabla-ventas table, .tabla-ventas thead, .tabla-ventas tbody, .tabla-ventas th, .tabla-ventas td, .tabla-ventas tr {
      display: block;
   }
+  
   .tabla-ventas thead { display: none; }
+  
   .tabla-ventas tbody tr {
-     margin-bottom: 10px;
+     margin-bottom: 16px;
      background: white;
      border: 1px solid var(--border);
-     border-radius: 10px;
-     padding: 10px;
+     border-radius: 12px;
+     padding: 16px;
+     box-shadow: var(--shadow);
   }
+  
   .tabla-ventas td {
      display: flex;
      justify-content: space-between;
-     padding: 10px;
-     border-bottom: none;
+     align-items: center;
+     padding: 8px 0;
+     border-bottom: 1px solid rgba(230, 233, 239, 0.5);
+     position: relative;
+     min-height: 40px;
   }
+  
+  .tabla-ventas td:last-child {
+    border-bottom: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
   .tabla-ventas td::before {
      content: attr(data-label);
      color: var(--muted);
      font-weight: 600;
      margin-right: 8px;
+     min-width: 80px;
+     font-size: 12px;
+  }
+  
+  .tabla-ventas td:last-child::before {
+    display: none;
+  }
+  
+  .tabla-ventas .acciones {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .tabla-ventas .btn {
+    flex: 1;
+    min-width: 70px;
+    margin: 2px;
+  }
+}
+
+/* Labels para la vista mobile usando nth-child como alternativa */
+@media (max-width: 580px) {
+  .tabla-ventas td:nth-child(1)::before { content: "Cliente:"; }
+  .tabla-ventas td:nth-child(2)::before { content: "Producto:"; }
+  .tabla-ventas td:nth-child(3)::before { content: "Cantidad:"; }
+  .tabla-ventas td:nth-child(4)::before { content: "Fecha:"; }
+  .tabla-ventas td:nth-child(5)::before { content: "Total:"; }
+}
+
+/* Alternativa: vista "card" en móviles (si el markup la soporta) */
+@media (max-width: 480px) {
+  .tabla-ventas {
+    padding: 6px;
+  }
+  
+  .tabla-ventas .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .tabla-ventas .buscador {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .tabla-ventas .buscador input[type="search"] {
+    width: 100%;
+  }
+  
+  .tabla-ventas tbody tr {
+    padding: 12px;
+  }
+  
+  .tabla-ventas td {
+    padding: 6px 0;
+    font-size: 14px;
   }
 }

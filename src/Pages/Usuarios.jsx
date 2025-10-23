@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getUsuarios, addUsuario, editUsuario, deleteUsuario } from "../Services/Usuarios";
+import { getUsuarios, addUsuario, editarUsuario, deleteUsuario } from "../Services/Usuarios";
 import "./Usuarios.css";
 
 
@@ -73,7 +73,7 @@ const Usuarios = () => {
                 email: editEmail,
                 rol: editRol
             };
-            await editUsuario(id, usuarioactualizado);
+            await editarUsuario(id, usuarioactualizado);
             setUsuarios(usuarios.map(u => (String(u.id) === String(id) ? usuarioactualizado : u)));
             setUsuarioEditando(null);
         } catch (error) {

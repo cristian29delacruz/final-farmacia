@@ -61,14 +61,105 @@
   50% { transform: scale(1.3);}
 }
 
-@media (max-width: 600px) {
+.main-header {
+  background: linear-gradient(90deg, #18a837 0%, #26d02f 100%);
+  color: #fff;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 24px #0003;
+  position: sticky;    
+  top: 0;            
+  z-index: 1020;
+  transition: transform 0.4s;    
+}
+
+.main-header.hide-header {
+  transform: translateY(-100%);
+}
+
+.main-header h1 {
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font size */
+  letter-spacing: 2px;
+  margin-bottom: 0.3rem;
+  text-shadow: 2px 2px 8px #0006;
+}
+
+.main-header p {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem); /* Responsive font size */
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+@keyframes header-glow {
+  from { box-shadow: 0 4px 24px #26d0ce88; }
+  to   { box-shadow: 0 8px 32px #1a298088; }
+}
+
+.main-footer {
+  background: linear-gradient(90deg, #1fcc53 0%, #1e914e 100%);
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem 1rem 1rem 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem); /* Responsive font size */
+  letter-spacing: 1px;
+  box-shadow: 0 -4px 24px #0003;
+  width: 100%;          
+  z-index: 1020;
+  margin-top: 0;       
+}
+
+@keyframes footer-glow {
+  from { box-shadow: 0 -4px 24px #26d0ce88; }
+  to   { box-shadow: 0 -8px 32px #1a298088; }
+}
+
+.footer-heart {
+  color: #ff4b2b;
+  animation: heart-beat 1s infinite;
+}
+
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1);}
+  50% { transform: scale(1.3);}
+}
+
+/* Mejoras responsive específicas */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 1.5rem 0.5rem 0.8rem 0.5rem;
+  }
+  
   .main-header h1 {
-    font-size: 1.5rem;
+    letter-spacing: 1px;
   }
+  
   .main-header p {
-    font-size: 1rem;
+    letter-spacing: 0.5px;
   }
-  .main-header, .main-footer {
-    padding: 0.7rem 0 0.5rem 0;
+  
+  .main-footer {
+    padding: 1rem 0.5rem 0.8rem 0.5rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-header {
+    padding: 1rem 0.25rem 0.5rem 0.25rem;
+  }
+  
+  .main-header h1 {
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+  }
+  
+  .main-header p {
+    letter-spacing: 0;
+  }
+  
+  .main-footer {
+    padding: 0.8rem 0.25rem 0.5rem 0.25rem;
+    letter-spacing: 0;
   }
 }

@@ -8,59 +8,321 @@
 
 .usuarios-container h2 {
   text-align: center;
-  font-size: 2.2em;
+  font-size: 2.5em;
   margin-bottom: 2rem;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
+/* Formularios */
+.crear-form, .editar-form {
+  background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.crear-form h3, .editar-form h3 {
+  color: #1a9bff;
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+  letter-spacing: 1px;
+}
+
+.crear-form input, .crear-form select,
+.editar-form input, .editar-form select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(30, 31, 33, 0.8);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.crear-form input:focus, .crear-form select:focus,
+.editar-form input:focus, .editar-form select:focus {
+  outline: none;
+  border-color: #1a9bff;
+  background: rgba(30, 31, 33, 0.9);
+  box-shadow: 0 0 0 3px rgba(26, 155, 255, 0.1);
+}
+
+.crear-form button, .editar-form button {
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  min-width: 120px;
+}
+
+.btn.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #fff;
+}
+
+.btn.btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.btn.btn-success {
+  background: linear-gradient(135deg, #28a745, #1e7e34);
+  color: #fff;
+}
+
+.btn.btn-success:hover {
+  background: linear-gradient(135deg, #1e7e34, #155724);
+  transform: translateY(-2px);
+}
+
+.btn.btn-secondary {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: #fff;
+}
+
+.btn.btn-secondary:hover {
+  background: linear-gradient(135deg, #5a6268, #454d55);
+  transform: translateY(-2px);
+}
+
+/* Tabla de usuarios */
 .usuarios-table {
   width: 100%;
   border-collapse: collapse;
-  background: #2c2f33;
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .usuarios-table th,
 .usuarios-table td {
-  padding: 14px 18px;
+  padding: 1rem 1.2rem;
   text-align: left;
-  border-bottom: 1px solid #444;
-  font-size: 0.95em;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 1rem;
 }
 
 .usuarios-table th {
-  background: #1e1f21;
+  background: rgba(30, 31, 33, 0.8);
   color: #1a9bff;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .usuarios-table tr:hover {
-  background-color: #393c40;
+  background-color: rgba(255,255,255,0.05);
 }
 
 .usuarios-table button {
-  padding: 6px 12px;
-  margin: 2px;
+  padding: 0.6rem 1rem;
+  margin: 0.2rem;
   border: none;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  min-width: 70px;
 }
 
 .usuarios-table button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .btn-eliminar {
-  background-color: #dc3545;
+  background: linear-gradient(135deg, #dc3545, #a71d2a);
   color: #fff;
 }
 
+.btn-eliminar:hover {
+  background: linear-gradient(135deg, #a71d2a, #7a1319);
+}
+
 .btn-editar {
-  background-color: #ffc107;
+  background: linear-gradient(135deg, #ffc107, #d39e00);
+  color: #000;
+}
+
+.btn-editar:hover {
+  background: linear-gradient(135deg, #d39e00, #b8860b);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .usuarios-container {
+    padding: 1rem;
   }
+  
+  .usuarios-container h2 {
+    font-size: 2em;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .crear-form, .editar-form {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  
+  .crear-form h3, .editar-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+  }
+  
+  .crear-form input, .crear-form select,
+  .editar-form input, .editar-form select {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .crear-form button, .editar-form button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    min-width: auto;
+  }
+  
+  .usuarios-table th,
+  .usuarios-table td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .usuarios-table th {
+    font-size: 1rem;
+  }
+  
+  .usuarios-table button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    margin: 0.1rem;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 580px) {
+  .usuarios-container {
+    padding: 0.5rem;
+  }
+  
+  .usuarios-container h2 {
+    font-size: 1.8em;
+  }
+  
+  .crear-form, .editar-form {
+    padding: 1rem;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  /* Convertir tabla a cards en móviles */
+  .usuarios-table, 
+  .usuarios-table thead, 
+  .usuarios-table tbody, 
+  .usuarios-table th, 
+  .usuarios-table td, 
+  .usuarios-table tr {
+    display: block;
+  }
+  
+  .usuarios-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .usuarios-table tr {
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+  }
+  
+  .usuarios-table td {
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    padding: 0.8rem 0 0.8rem 100px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .usuarios-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 90px;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #1a9bff;
+    font-size: 0.85rem;
+  }
+  
+  .usuarios-table td:last-child {
+    border-bottom: none;
+    padding-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .usuarios-table td:last-child:before {
+    display: none;
+  }
+  
+  .usuarios-table button {
+    flex: 1;
+    min-width: 80px;
+    margin: 0.2rem;
+  }
+}
+
+/* Labels para móviles usando nth-child */
+@media (max-width: 580px) {
+  .usuarios-table td:nth-child(1):before { content: "Nombre:"; }
+  .usuarios-table td:nth-child(2):before { content: "Usuario:"; }
+  .usuarios-table td:nth-child(3):before { content: "Email:"; }
+  .usuarios-table td:nth-child(4):before { content: "Rol:"; }
+}
+
+@media (max-width: 400px) {
+  .crear-form, .editar-form {
+    margin: 0.25rem 0 0.75rem;
+    padding: 0.8rem;
+  }
+  
+  .usuarios-table tr {
+    padding: 0.8rem;
+  }
+  
+  .usuarios-table td {
+    padding: 0.6rem 0 0.6rem 80px;
+    font-size: 0.85rem;
+  }
+  
+  .usuarios-table td:before {
+    width: 70px;
+    font-size: 0.8rem;
+  }
+}

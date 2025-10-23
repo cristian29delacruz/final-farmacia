@@ -23,7 +23,7 @@
 
 .tabla-clientes th {
     background: #1f2022;
-    color : #fff;
+    color: #fff;
     font-size: 1.2em;
     letter-spacing: 1px;
     border-bottom: 2px solid #444;
@@ -37,6 +37,7 @@
 
 .tabla-clientes button {
     margin-right: 8px;
+    margin-bottom: 4px;
     padding: 8px 12px;
     border: none;
     border-radius: 6px;
@@ -45,12 +46,14 @@
     cursor: pointer;
     font-weight: bold;
     font-family: inherit;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s opacity 0.2s;
-    box-shadow: 0 2px 8px  rgba(0, 0, 0, 0.10);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    min-width: 70px;
 }
 
 .tabla-clientes button:last-child {
     background: #dc3545;
+    margin-right: 0;
 }
 
 .tabla-clientes button:hover {
@@ -116,6 +119,119 @@
     background: #111;
     min-height: 100vh;
     padding: 40px 0 0 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .tabla-clientes {
+        margin-top: 20px;
+        border-radius: 12px;
+    }
     
+    .tabla-clientes th, .tabla-clientes td {
+        padding: 12px 16px;
+        font-size: 0.95em;
+    }
+    
+    .tabla-clientes th {
+        font-size: 1.05em;
+    }
+    
+    .tabla-clientes button {
+        padding: 6px 8px;
+        font-size: 0.85em;
+        margin-right: 4px;
+        margin-bottom: 4px;
+        min-width: 60px;
+    }
+    
+    .admin-clientes-title {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+    }
+    
+    .admin-clientes-bg {
+        padding: 20px 0 0 0;
+    }
+}
+
+@media (max-width: 580px) {
+    /* Convertir tabla a cards en móviles pequeños */
+    .tabla-clientes, 
+    .tabla-clientes thead, 
+    .tabla-clientes tbody, 
+    .tabla-clientes th, 
+    .tabla-clientes td, 
+    .tabla-clientes tr {
+        display: block;
+    }
+    
+    .tabla-clientes thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .tabla-clientes tr {
+        border: 1px solid #444;
+        border-radius: 12px;
+        padding: 16px;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, #2c2f33 0%, #3a3d41 100%);
+    }
+    
+    .tabla-clientes td {
+        border: none;
+        border-bottom: 1px solid #444;
+        position: relative;
+        padding: 8px 0 8px 120px;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .tabla-clientes td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 110px;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #00e6d0;
+        font-size: 0.9em;
+    }
+    
+    .tabla-clientes td:last-child {
+        border-bottom: none;
+        padding-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .tabla-clientes td:last-child:before {
+        display: none;
+    }
+    
+    .tabla-clientes button {
+        flex: 1;
+        min-width: 80px;
+        margin: 2px;
+    }
+    
+    .admin-clientes-title {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Labels para móviles usando nth-child */
+@media (max-width: 580px) {
+    .tabla-clientes td:nth-child(1):before { content: "Nombre:"; }
+    .tabla-clientes td:nth-child(2):before { content: "Correo:"; }
+    .tabla-clientes td:nth-child(3):before { content: "Teléfono:"; }
+    .tabla-clientes td:nth-child(4):before { content: "Dirección:"; }
 }
 
