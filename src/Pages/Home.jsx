@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { addVenta } from "../Services/Ventas";
 import React from "react";
 import "./Home.css";
+import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Home = () => {
   const [productos, setProductos] = useState([]);
@@ -95,14 +98,14 @@ const Home = () => {
     }
     return (
         <div className="container mt-4">
-            <h1 className="mb-4">Productos</h1>
+            <h1 className="mb-4">
+                <LocalPharmacyIcon style={{ fontSize: 40, marginRight: 10, verticalAlign: 'middle' }} />
+                Productos
+            </h1>
                         <div className="search-bar mb-4">
                                 <div className="search-inner">
                                     <span className="search-icon" aria-hidden>
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                            <circle cx="11" cy="11" r="6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></circle>
-                                        </svg>
+                                        <SearchIcon style={{ fontSize: 18 }} />
                                     </span>
                                     <input
                                             type="text"
@@ -132,7 +135,10 @@ const Home = () => {
                             <h5 className="card-title">{producto.nombre}</h5>
                             <p className="card-text">Precio: ${producto.precio}</p>
                             <div style={{marginTop: 'auto'}}>
-                                <button className="btn-primary" onClick={() => handleventa(producto)}>Comprar</button>
+                                <button className="btn-primary" onClick={() => handleventa(producto)}>
+                                    <ShoppingCartIcon style={{ fontSize: 18, marginRight: 5, verticalAlign: 'middle' }} />
+                                    Comprar
+                                </button>
                             </div>
                         </div>
                     </div>

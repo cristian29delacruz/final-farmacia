@@ -3,6 +3,7 @@ import {getProductos, addProducto, editProducto, deleteProducto} from "../Servic
 import { getVentas } from "../Services/Ventas";
 import TablaProductos from "../components/TablaProductos";
 import FormProducto from "../components/FormProducto";
+import InventoryIcon from '@mui/icons-material/Inventory';
 
 const Productos = () => {
   const [productos, setProductos] = useState([]);
@@ -42,7 +43,10 @@ const Productos = () => {
     };
     return (
         <div>
-            <h2>Productos</h2>
+            <h2>
+                <InventoryIcon style={{ fontSize: 32, marginRight: 10, verticalAlign: 'middle' }} />
+                Productos
+            </h2>
             <FormProducto
                 onGuardar={editando ? handleActualizar : handleAgregar}
                 productoSeleccionado={editando}

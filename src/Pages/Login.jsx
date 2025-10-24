@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import LoginIcon from '@mui/icons-material/Login';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import LockIcon from '@mui/icons-material/Lock';
 
 
 const Login = () => {
@@ -46,7 +49,10 @@ const Login = () => {
     return (
         <div className="login-container">
             <form onSubmit={handleLogin} className="login-form">
-                <h2>Iniciar Sesión</h2>
+                <h2>
+                    <LockIcon style={{ fontSize: 32, marginRight: 10, verticalAlign: 'middle' }} />
+                    Iniciar Sesión
+                </h2>
                 {error && <p className="alert alert-danger">{error}</p>}
                 <input
                     type="text"
@@ -64,9 +70,11 @@ const Login = () => {
                 />
                 <div className="login-actions">
                     <button type="submit" className="btn-primary" disabled={loading || !usuario || !password}>
+                        <LoginIcon style={{ fontSize: 18, marginRight: 5, verticalAlign: 'middle' }} />
                         {loading ? "Cargando..." : "Iniciar Sesión"}
                     </button>
                     <button type="button" className="btn-secondary" onClick={() => navigate('/registro')}>
+                        <PersonAddIcon style={{ fontSize: 18, marginRight: 5, verticalAlign: 'middle' }} />
                         Registrarse
                     </button>
                 </div>
