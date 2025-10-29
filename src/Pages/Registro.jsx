@@ -16,6 +16,7 @@ const Registro = () => {
         setLoading(true);
         setError("");
         try {
+            // GET - Obtener usuarios para validar si ya existe
             const { data } = await axios.get("http://localhost:3001/api/usuarios");
             const existe = data.find(
                 (u) => u.usuario === usuario
@@ -25,6 +26,7 @@ const Registro = () => {
                 setLoading(false);
                 return;
             }
+            // POST - Crear nuevo usuario
             await axios.post("http://localhost:3001/api/usuarios", {
                 nombre,
                 usuario,

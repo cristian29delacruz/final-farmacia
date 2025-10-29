@@ -7,19 +7,27 @@ import "./Home.css";
 import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
+import ModalExito from "../components/ModalExito";
 
 const Home = () => {
   const [productos, setProductos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
     const [categoria, setCategoria] = useState("all");
   const [user, setUser] = useState(null);
+  const [mostrarModal, setMostrarModal] = useState(false);
   const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get("http://localhost:3001/productos")
-            .then(response => {
+        const cargarProductos = async () => {
+            try {
+                // GET - Obtener todos los productos
+                const response = await axios.get("http://localhost:3001/productos");
                 setProductos(response.data);
-            });
+            } catch (error) {
+                console.error("Error al cargar productos:", error);
+            }
+        };
+        cargarProductos();
     }, []);
 
     useEffect(() => {
@@ -85,17 +93,28 @@ const Home = () => {
             showCenteredMessage("Por favor, inicie sesión para realizar una comprar.");
             return;
         }
-        const venta = {
-            id_producto: producto.id,
-            id_usuario: user.id,
-            cantidad: 1,
-            total: producto.precio,
-            fecha: new Date().toISOString()
-        };
+        try {
+            const venta = {
+                id_producto: producto.id,
+                id_usuario: user.id,
+                cantidad: 1,
+                total: producto.precio,
+                fecha: new Date().toISOString()
+            };
 
-        await addVenta(venta);
-        alert("Venta realizada con éxito");
+            // POST - Crear nueva venta
+            await addVenta(venta);
+            setMostrarModal(true);
+        } catch (error) {
+            console.error("Error al realizar la venta:", error);
+            alert("Error al realizar la venta. Por favor, intente de nuevo.");
+        }
     }
+
+    const handleCerrarModal = () => {
+        setMostrarModal(false);
+        navigate("/");
+    };
     return (
         <div className="container mt-4">
             <h1 className="mb-4">
@@ -144,6 +163,13 @@ const Home = () => {
                     </div>
                 ))}
             </div>
+
+            <ModalExito
+                mostrar={mostrarModal}
+                onCerrar={handleCerrarModal}
+                titulo="¡Compra Exitosa!"
+                mensaje="Tu compra se ha realizado correctamente. Serás redirigido al inicio..."
+            />
         </div>
     );
 }

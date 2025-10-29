@@ -20,7 +20,7 @@ const Login = () => {
         setLoading(true);
         setError("");
         try {
-            // Obtener la lista de usuarios desde la API (o ajustar a la respuesta real de tu endpoint)
+            // GET - Obtener la lista de usuarios desde la API
             const { data } = await axios.get("http://localhost:3001/usuarios");
 
             console.log("Datos recibidos de la API:", data);

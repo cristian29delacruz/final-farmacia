@@ -21,6 +21,7 @@ const Usuarios = () => {
     useEffect(() => {
         const fetchUsuarios = async () => {
             try {
+                // GET - Obtener todos los usuarios
                 const { data } = await getUsuarios();
                 setUsuarios(data);
             } catch (error) {
@@ -40,6 +41,7 @@ const Usuarios = () => {
         if (window.confirm(
             `¿Está seguro de que desea eliminar a ${usuarioseleccionado.nombre || usuarioseleccionado.usuario}?`)) {
             try {
+                // DELETE - Eliminar usuario
                 await deleteUsuario(id);
                 setUsuarios(usuarios.filter(u => String(u.id) !== String(id)));
             } catch (error) {
@@ -73,6 +75,7 @@ const Usuarios = () => {
                 email: editEmail,
                 rol: editRol
             };
+            // PUT - Actualizar usuario existente
             await editarUsuario(id, usuarioactualizado);
             setUsuarios(usuarios.map(u => (String(u.id) === String(id) ? usuarioactualizado : u)));
             setUsuarioEditando(null);
@@ -98,6 +101,7 @@ const Usuarios = () => {
                 email: nuevoEmail,
                 rol: nuevoRol
             };
+            // POST - Crear nuevo usuario
             const { data } = await addUsuario(nuevoUsuarioObjeto);
             setUsuarios([...usuarios, data]);
             setNuevoNombre("");

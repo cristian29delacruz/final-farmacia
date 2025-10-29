@@ -219,6 +219,62 @@
       "cantidad": 1,
       "total": 502,
       "fecha": "2025-10-18T02:25:33.609Z"
+    },
+    {
+      "id": "0cf2",
+      "id_producto": "3",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 600,
+      "fecha": "2025-10-24T04:04:06.222Z"
+    },
+    {
+      "id": "c2dc",
+      "id_producto": "3",
+      "id_usuario": "4",
+      "cantidad": 1,
+      "total": 600,
+      "fecha": "2025-10-24T04:06:15.729Z"
+    },
+    {
+      "id": "8a26",
+      "id_producto": "6",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 1200,
+      "fecha": "2025-10-29T12:31:57.953Z"
+    },
+    {
+      "id": "6587",
+      "id_producto": "4",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 800,
+      "fecha": "2025-10-29T18:43:41.254Z"
+    },
+    {
+      "id": "da7d",
+      "id_producto": "3",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 600,
+      "fecha": "2025-10-29T18:43:53.648Z"
+    },
+    {
+      "id": "fa1c",
+      "id_producto": "1",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 502,
+      "fecha": "2025-10-29T18:45:18.296Z"
+    },
+    {
+      "id": "f906",
+      "id_producto": "2",
+      "id_usuario": "1",
+      "cantidad": 1,
+      "total": 700,
+      "fecha": "2025-10-29T18:47:00.310Z"
     }
   ]
 }

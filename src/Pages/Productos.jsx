@@ -11,35 +11,56 @@ const Productos = () => {
   const [ventas, setVentas] = useState([]);
 
   const cargarProductos = async () => {
-    const res = await getProductos();
-    setProductos(res.data);
+    try {
+      // GET - Obtener todos los productos
+      const res = await getProductos();
+      setProductos(res.data);
+    } catch (error) {
+      console.error("Error al cargar productos:", error);
+    }
   };
   useEffect(() => {
     cargarProductos();
   }, []);
 
   const handleAgregar = async (data) => {
-    await addProducto(data);
-    cargarProductos();
+    try {
+      // POST - Crear nuevo producto
+      await addProducto(data);
+      cargarProductos();
+    } catch (error) {
+      console.error("Error al agregar producto:", error);
+    }
   };
 
     const handleEditar = (prod) => setEditando(prod);
 
     const handleActualizar = async (data) => {
-        await editProducto(editando.id, data);
-        setEditando(null);
-        cargarProductos();
+        try {
+            // PUT - Actualizar producto existente
+            await editProducto(editando.id, data);
+            setEditando(null);
+            cargarProductos();
+        } catch (error) {
+            console.error("Error al actualizar producto:", error);
+        }
     };
 
     const handleEliminar = async (id) => {
-        const res = await getVentas();
-        const tieneVentas = res.data.some(v => String(v.productoId) === String(id));
-        if (tieneVentas) {
-            alert("No puedes eliminar este producto porque tiene ventas asociadas.");
-            return;
+        try {
+            // GET - Verificar si el producto tiene ventas asociadas
+            const res = await getVentas();
+            const tieneVentas = res.data.some(v => String(v.productoId) === String(id));
+            if (tieneVentas) {
+                alert("No puedes eliminar este producto porque tiene ventas asociadas.");
+                return;
+            }
+            // DELETE - Eliminar producto
+            await deleteProducto(id);
+            cargarProductos();
+        } catch (error) {
+            console.error("Error al eliminar producto:", error);
         }
-        await deleteProducto(id);
-        cargarProductos();
     };
     return (
         <div>

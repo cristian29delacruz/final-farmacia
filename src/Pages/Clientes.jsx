@@ -15,14 +15,19 @@ const Clientes = () => {
   const [clienteHistorial, setClienteHistorial] = useState(null);
 
   const cargarDatos = async () => {
-    const [cliRes, ventasRes, productosRes] = await Promise.all([
-      getClientes(),
-      getVentas(),
-      getProductos()
-    ]);
-    setClientes(cliRes.data);
-    setVentas(ventasRes.data);
-    setMedicamentos(productosRes.data);
+    try {
+      // GET - Obtener clientes, ventas y productos
+      const [cliRes, ventasRes, productosRes] = await Promise.all([
+        getClientes(),
+        getVentas(),
+        getProductos()
+      ]);
+      setClientes(cliRes.data);
+      setVentas(ventasRes.data);
+      setMedicamentos(productosRes.data);
+    } catch (error) {
+      console.error("Error al cargar datos:", error);
+    }
   };
 
   useEffect(() => {
@@ -30,27 +35,43 @@ const Clientes = () => {
   }, []);
 
   const handleAgregar = async (data) => {
-    await addCliente(data);
-    cargarDatos();
+    try {
+      // POST - Crear nuevo cliente
+      await addCliente(data);
+      cargarDatos();
+    } catch (error) {
+      console.error("Error al agregar cliente:", error);
+    }
   };
 
   const handleEditar = (cli) => setEditando(cli);
 
   const handleActualizar = async (data) => {
-    await editCliente(editando.id, data);
-    setEditando(null);
-    cargarDatos();
+    try {
+      // PUT - Actualizar cliente existente
+      await editCliente(editando.id, data);
+      setEditando(null);
+      cargarDatos();
+    } catch (error) {
+      console.error("Error al actualizar cliente:", error);
+    }
   };
 
   const handleEliminar = async (id) => {
-    const res = await getVentas();
-    const tieneVentas = res.data.some(v => String(v.clienteId) === String(id));
-    if (tieneVentas) {
-      alert("No puedes eliminar este cliente porque tiene ventas asociadas.");
-      return;
+    try {
+      // GET - Verificar si el cliente tiene ventas asociadas
+      const res = await getVentas();
+      const tieneVentas = res.data.some(v => String(v.clienteId) === String(id));
+      if (tieneVentas) {
+        alert("No puedes eliminar este cliente porque tiene ventas asociadas.");
+        return;
+      }
+      // DELETE - Eliminar cliente
+      await deleteCliente(id);
+      cargarDatos();
+    } catch (error) {
+      console.error("Error al eliminar cliente:", error);
     }
-    await deleteCliente(id);
-    cargarDatos();
   };
 
   const handleVerHistorial = (cli) => setClienteHistorial(cli);
